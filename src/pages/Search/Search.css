@@ -1,0 +1,237 @@
+.search-page {
+  min-height: 100vh;
+  background-color: var(--netflix-black);
+  padding-top: 5rem;
+}
+
+.search-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.search-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--netflix-white);
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--netflix-white);
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--netflix-white);
+}
+
+.search-input::placeholder {
+  color: var(--netflix-gray);
+}
+
+.search-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: var(--netflix-red);
+  color: var(--netflix-white);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  background-color: #b00610;
+  transform: scale(1.02);
+}
+
+.search-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.search-tabs .tab {
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--netflix-white);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.search-tabs .tab:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--netflix-white);
+}
+
+.search-tabs .tab.active {
+  background-color: var(--netflix-red);
+  border-color: var(--netflix-red);
+  font-weight: 600;
+}
+
+.search-results {
+  margin-top: 3rem;
+}
+
+.results-section {
+  margin-bottom: 3rem;
+}
+
+.results-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--netflix-white);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.no-results-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.no-results h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--netflix-white);
+}
+
+.no-results p {
+  font-size: 1.1rem;
+  color: var(--netflix-light-gray);
+}
+
+.search-suggestions {
+  text-align: center;
+}
+
+.search-suggestions h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--netflix-light-gray);
+}
+
+.suggestion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.tag {
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  color: var(--netflix-white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tag:hover {
+  background-color: var(--netflix-white);
+  color: var(--netflix-black);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .search-page {
+    padding-top: 4rem;
+  }
+  
+  .search-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .search-container h1 {
+    font-size: 2rem;
+  }
+  
+  .search-form {
+    flex-direction: column;
+  }
+  
+  .search-input {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .search-button {
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .search-tabs {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .search-tabs .tab {
+    width: 100%;
+    padding: 0.875rem 1rem;
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .no-results-icon {
+    font-size: 3rem;
+  }
+  
+  .no-results h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,379 @@
+/* Movie Modal Styles - Netflix Design */
+
+.movie-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+  backdrop-filter: blur(5px);
+}
+
+.movie-modal-content {
+  background-color: #181818;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+}
+
+/* Custom scrollbar */
+.movie-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.movie-modal-content::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.movie-modal-content::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.movie-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.modal-loading {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Section */
+.modal-hero {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.modal-video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, #181818, transparent);
+  pointer-events: none;
+}
+
+.modal-backdrop {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.modal-backdrop-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 24, 24, 0) 0%,
+    rgba(24, 24, 24, 0.7) 70%,
+    rgba(24, 24, 24, 1) 100%
+  );
+}
+
+.modal-hero-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 2;
+}
+
+.modal-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modal-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-btn-play {
+  background-color: white;
+  color: black;
+}
+
+.modal-btn-play:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.play-icon {
+  font-size: 1.2rem;
+}
+
+.modal-btn-wishlist {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.modal-btn-wishlist:hover {
+  background-color: rgba(109, 109, 110, 0.9);
+  border-color: white;
+}
+
+.modal-btn-wishlist.in-wishlist {
+  background-color: rgba(229, 9, 20, 0.7);
+  border-color: var(--netflix-red);
+}
+
+/* Details Section */
+.modal-details {
+  padding: 2rem;
+}
+
+.modal-main-info {
+  margin-bottom: 2rem;
+}
+
+.modal-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.modal-meta span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.modal-rating {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.modal-overview {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.modal-secondary-info {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-info-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.info-label {
+  color: rgba(255, 255, 255, 0.5);
+  min-width: 80px;
+  font-weight: 600;
+}
+
+.info-value {
+  color: rgba(255, 255, 255, 0.9);
+  flex: 1;
+}
+
+/* Cast Section */
+.modal-cast-section {
+  margin-top: 2rem;
+}
+
+.modal-cast-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.modal-cast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.cast-card {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.cast-image {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.cast-image-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background-color: #3a3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.cast-info {
+  padding: 0.75rem;
+}
+
+.cast-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+  color: white;
+}
+
+.cast-character {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .movie-modal-overlay {
+    padding: 0;
+  }
+
+  .movie-modal-content {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .modal-hero {
+    height: 300px;
+  }
+
+  .modal-title {
+    font-size: 2rem;
+  }
+
+  .modal-hero-content {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .modal-details {
+    padding: 1.5rem;
+  }
+
+  .modal-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .modal-cast-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .modal-info-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .info-label {
+    min-width: auto;
+  }
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-details > * {
+  animation: fadeIn 0.5s ease-out forwards;
+}
