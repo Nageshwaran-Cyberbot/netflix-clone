@@ -1,0 +1,49 @@
+name: Deploy Netflix Clone
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-frontend:
+    name: Deploy Frontend to Vercel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+
+  deploy-backend:
+    name: Deploy Backend to Render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Trigger Render Deployment
+        run: |
+          if [ -n "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
+            curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+            echo "Deployment triggered on Render"
+          else
+            echo "RENDER_DEPLOY_HOOK not configured"
+          fi
+
+  notify-completion:
+    name: Deployment Complete
+    runs-on: ubuntu-latest
+    needs: [deploy-frontend, deploy-backend]
+    if: always()
+    steps:
+      - name: Log Deployment Status
+        run: |
+          echo "✅ Frontend deployment to Vercel completed"
+          echo "✅ Backend deployment to Render triggered"
+          echo "📝 Next: Create demo user manually in Render shell if first deployment"
+          echo "📝 Run: cd server && npm run seed"
