@@ -683,42 +683,78 @@ Total Modules: 529
 
 ## 🚀 Deployment
 
-### Build for Production
+### Quick Start Deployment (15 minutes)
+
+See **[QUICK_DEPLOY.md](./QUICK_DEPLOY.md)** for step-by-step deployment guide with:
+- ✅ Frontend deployment (Vercel/Netlify)
+- ✅ Backend deployment (Render/Railway)
+- ✅ Database setup (MongoDB Atlas)
+- ✅ Environment variables
+- ✅ Post-deployment testing
+
+### Detailed Deployment Guide
+
+See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for comprehensive guide including:
+- Multiple platform options (Vercel, Netlify, Render, Railway, Heroku)
+- Database setup instructions
+- Environment variables checklist
+- Security considerations
+- Troubleshooting common issues
+- Monitoring and maintenance
+
+### Quick Build for Production
 ```bash
+# Frontend
 npm run build
+
+# Backend
+cd server
+npm run build
+npm start
 ```
 
 ### Deploy to Popular Platforms
 
-#### Vercel
+#### Vercel (Recommended - Easiest)
 ```bash
-# Install Vercel CLI
 npm i -g vercel
-
-# Deploy
 vercel
 ```
 
 #### Netlify
 ```bash
-# Install Netlify CLI
 npm i -g netlify-cli
-
-# Deploy
-netlify deploy --prod
+netlify deploy --prod --dir=dist
 ```
 
-#### GitHub Pages
+#### Render.com (Backend)
 ```bash
-# Build
-npm run build
+# Push to GitHub
+git push origin main
 
-# Deploy dist/ folder
-gh-pages -d dist
+# Render auto-deploys from GitHub
 ```
 
 ### Environment Variables
-Don't forget to add `VITE_TMDB_API_KEY` to your deployment platform's environment variables!
+
+**Frontend (.env.local):**
+```bash
+VITE_TMDB_API_KEY=your_tmdb_api_key
+VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
+VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+VITE_BACKEND_URL=https://your-backend-api.onrender.com/api
+```
+
+**Backend (server/.env):**
+```bash
+PORT=5001
+NODE_ENV=production
+MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/netflix-clone
+JWT_SECRET=your_secure_random_secret_key_here
+CORS_ORIGIN=https://your-frontend-url.vercel.app
+```
+
+⚠️ **Important**: Never commit `.env` files! Use `.env.local` and `.env.example` templates.
 
 ---
 
