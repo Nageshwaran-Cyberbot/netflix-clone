@@ -4,8 +4,8 @@ services:
     env: node
     plan: free
     region: oregon
-    buildCommand: npm install && cd server && npm install
-    startCommand: cd server && npm run build && npm start
+    buildCommand: cd server && npm install --include=dev && npm run build
+    startCommand: cd server && npm start
     
     envVars:
       - key: PORT
