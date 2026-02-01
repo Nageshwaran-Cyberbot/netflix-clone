@@ -70,27 +70,31 @@
 }
 
 .hero-content {
-  max-width: 650px;
+  max-width: 500px;
   z-index: 2;
   position: relative;
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   line-height: 1.1;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
   letter-spacing: -1px;
 }
 
 .hero-description {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.8rem;
   color: var(--netflix-white);
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  max-width: 500px;
+  max-width: 450px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .hero-buttons {
@@ -160,7 +164,8 @@
 .hero-indicators {
   position: absolute;
   bottom: 2rem;
-  right: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 0.75rem;
   z-index: 3;
@@ -211,8 +216,10 @@
   }
   
   .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 1.5rem;
+    max-width: 100%;
+    -webkit-line-clamp: 2;
   }
   
   .hero-button {
@@ -225,7 +232,8 @@
   }
 
   .hero-indicators {
-    right: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 1rem;
   }
 
