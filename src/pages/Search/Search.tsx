@@ -89,7 +89,7 @@ export default function Search() {
             autoFocus
           />
           <button type="submit" className="search-button">
-            🔍 Search
+            Search
           </button>
         </form>
 
@@ -146,7 +146,12 @@ export default function Search() {
               </>
             ) : (
               <div className="no-results">
-                <div className="no-results-icon">🔍</div>
+                <div className="no-results-icon">
+                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M21 21L16.65 16.65" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
                 <h2>No results found for "{searchQuery}"</h2>
                 <p>Try searching for something else</p>
               </div>

@@ -64,7 +64,7 @@ const MovieCard = ({ movie, onClick }: MovieCardProps) => {
         <div className="movie-card-overlay">
           <h3 className="movie-card-title">{movie.title}</h3>
           <div className="movie-card-info">
-            <span className="movie-card-rating">⭐ {movie.vote_average.toFixed(1)}</span>
+            <span className="movie-card-rating">★ {movie.vote_average.toFixed(1)}</span>
             <span className="movie-card-year">
               {movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A'}
             </span>

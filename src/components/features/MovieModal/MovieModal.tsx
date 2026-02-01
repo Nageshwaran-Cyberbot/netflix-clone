@@ -83,7 +83,9 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
           onClick={(e) => e.stopPropagation()}
         >
           <button className="modal-close-btn" onClick={onClose}>
-            ✕
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
 
           {loading ? (
@@ -147,7 +149,7 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
               <div className="modal-details">
                 <div className="modal-main-info">
                   <div className="modal-meta">
-                    <span className="modal-rating">⭐ {movie.vote_average.toFixed(1)}</span>
+                    <span className="modal-rating">★ {movie.vote_average.toFixed(1)}</span>
                     <span className="modal-year">
                       {details?.release_date ? new Date(details.release_date).getFullYear() : 'N/A'}
                     </span>
@@ -202,7 +204,12 @@ const MovieModal = ({ movie, onClose }: MovieModalProps) => {
                               className="cast-image"
                             />
                           ) : (
-                            <div className="cast-image-placeholder">👤</div>
+                            <div className="cast-image-placeholder">
+                              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/>
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                              </svg>
+                            </div>
                           )}
                           <div className="cast-info">
                             <p className="cast-name">{actor.name}</p>

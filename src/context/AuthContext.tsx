@@ -66,7 +66,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           setUser(user);
           setToken(token);
           localStorage.setItem('netflix_token', token);
-          toast.success(`Welcome back, ${user.name}! 🎬`);
+          toast.success(`Welcome back, ${user.name}!`);
           return true;
         }
       }
@@ -96,7 +96,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           setUser(user);
           setToken(token);
           localStorage.setItem('netflix_token', token);
-          toast.success(`Welcome to Netflix, ${user.name}! 🎉`);
+          toast.success(`Welcome to Netflix, ${user.name}!`);
           return true;
         }
       }

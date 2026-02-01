@@ -1,4 +1,4 @@
-# 🎬 Netflix Clone
+# Netflix Clone
 
 > A full-stack Netflix clone with **React 19**, **TypeScript**, **Node.js**, and **MongoDB**
 
@@ -8,11 +8,11 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green)
 ![Status](https://img.shields.io/badge/Status-Live-success)
 
-**🌐 Live Demo**: [netflix-clone-hh1d.vercel.app](https://netflix-clone-hh1d.vercel.app)
+**Live Demo**: [netflix-clone-hh1d.vercel.app](https://netflix-clone-hh1d.vercel.app)
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ```bash
 # Clone and install
@@ -32,19 +32,19 @@ npm run dev
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 **User Authentication** - Register, login, and secure sessions with JWT
-- 🎬 **Browse & Search** - 500K+ movies and TV shows from TMDB
-- 📺 **Watch Trailers** - Auto-playing YouTube trailers in modals
-- ⭐ **My List** - Persistent watchlist with MongoDB storage
-- 🤖 **AI Chatbot** - Intelligent assistant for help and recommendations
-- 📱 **Fully Responsive** - Seamless experience on all devices
-- ⚡ **Blazing Fast** - Built with Vite, optimized for performance
+- **User Authentication** - Register, login, and secure sessions with JWT
+- **Browse & Search** - 500K+ movies and TV shows from TMDB
+- **Watch Trailers** - Auto-playing YouTube trailers in modals
+- **My List** - Persistent watchlist with MongoDB storage
+- **AI Chatbot** - Intelligent assistant for help and recommendations
+- **Fully Responsive** - Seamless experience on all devices
+- **Blazing Fast** - Built with Vite, optimized for performance
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend**: React 19 • TypeScript • Vite • Framer Motion • Zustand  
 **Backend**: Node.js • Express • TypeScript • JWT • Bcrypt  
@@ -53,7 +53,7 @@ npm run dev
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 netflix-clone/
@@ -79,7 +79,7 @@ netflix-clone/
 
 ---
 
-## 🚀 Development
+## Development
 
 ### Frontend Only (Quickest)
 ```bash
@@ -117,7 +117,7 @@ CORS_ORIGIN=http://localhost:5173
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 **Live URLs**:
 - Frontend: [https://netflix-clone-hh1d.vercel.app](https://netflix-clone-hh1d.vercel.app)
@@ -130,7 +130,7 @@ CORS_ORIGIN=http://localhost:5173
 
 ---
 
-## 🎯 API Endpoints
+## API Endpoints
 
 ### Authentication
 ```
@@ -155,7 +155,7 @@ DELETE /api/history/:id         - Remove from history
 
 ---
 
-## 📊 Key Stats
+## Key Stats
 
 ```
 Bundle Size:      432 KB (gzipped: 142 KB)
@@ -168,7 +168,7 @@ Database Models:  3
 
 ---
 
-## 🎨 Key Features Explained
+## Key Features Explained
 
 ### **Intelligent Chatbot**
 AI-powered assistant with context-aware responses for help, recommendations, and troubleshooting.
@@ -185,17 +185,17 @@ Real-time search with debouncing (500ms) to optimize API calls and performance.
 
 ---
 
-## 🏆 Highlights
+## Highlights
 
-- ✅ **Production Ready** - Deployed on Vercel + Render
-- ✅ **Type Safe** - 100% TypeScript coverage
-- ✅ **Secure** - JWT authentication + password hashing
-- ✅ **Fast** - 2.7s build time, <3s page load
-- ✅ **Tested** - Zero errors, production-grade code
+- **Production Ready** - Deployed on Vercel + Render
+- **Type Safe** - 100% TypeScript coverage
+- **Secure** - JWT authentication + password hashing
+- **Fast** - 2.7s build time, <3s page load
+- **Tested** - Zero errors, production-grade code
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Fork the repo and create a pull request.
 
@@ -207,13 +207,13 @@ Contributions welcome! Fork the repo and create a pull request.
 
 ---
 
-## 📄 License
+## License
 
 MIT License - feel free to use this project for learning!
 
 ---
 
-## 🙏 Credits
+## Credits
 
 - **TMDB** - Movie database API
 - **Netflix** - Design inspiration
@@ -223,10 +223,10 @@ MIT License - feel free to use this project for learning!
 
 <div align="center">
 
-**Built with ❤️ for learning**
+**Built with passion for learning**
 
-⭐ Star this repo if you find it helpful!
+Star this repo if you find it helpful!
 
-[⬆ Back to Top](#-netflix-clone)
+[Back to Top](#netflix-clone)
 
 </div>

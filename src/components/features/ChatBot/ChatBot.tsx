@@ -54,7 +54,7 @@ const ChatBot = () => {
 
     // Add to list
     if (lowerMessage.includes('add') || lowerMessage.includes('save')) {
-      return "To add content to My List, simply hover over any movie or TV show card and click the '+' button in the top-right corner. Click again (✓) to remove it from your list!";
+      return "To add content to My List, simply hover over any movie or TV show card and click the '+' button in the top-right corner. Click again (checkmark) to remove it from your list!";
     }
 
     // Account related
@@ -88,12 +88,12 @@ const ChatBot = () => {
       lowerMessage.includes('hi') ||
       lowerMessage.includes('hey')
     ) {
-      return "Hello! 👋 Welcome to Netflix Clone! I'm here to help you navigate and enjoy our platform. What can I assist you with today?";
+      return "Hello! Welcome to Netflix Clone! I'm here to help you navigate and enjoy our platform. What can I assist you with today?";
     }
 
     // Thanks
     if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
-      return "You're welcome! Happy streaming! 🍿 Feel free to ask if you need anything else.";
+      return "You're welcome! Happy streaming! Feel free to ask if you need anything else.";
     }
 
     // Default response

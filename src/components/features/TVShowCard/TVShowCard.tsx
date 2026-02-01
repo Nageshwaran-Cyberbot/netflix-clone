@@ -58,7 +58,7 @@ const TVShowCard = ({ tvShow, onClick }: TVShowCardProps) => {
       <div className="tvshow-card-overlay">
         <h3 className="tvshow-card-title">{tvShow.name}</h3>
         <div className="tvshow-card-info">
-          <span className="tvshow-card-rating">⭐ {tvShow.vote_average.toFixed(1)}</span>
+          <span className="tvshow-card-rating">★ {tvShow.vote_average.toFixed(1)}</span>
           <span className="tvshow-card-year">
             {tvShow.first_air_date ? new Date(tvShow.first_air_date).getFullYear() : 'N/A'}
           </span>

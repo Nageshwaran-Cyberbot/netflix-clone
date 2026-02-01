@@ -65,7 +65,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <button className="footer-service-code">Service Code</button>
-          <p>&copy; {new Date().getFullYear()} Netflix Clone. Made with ❤️ using React + TypeScript</p>
+          <p>&copy; {new Date().getFullYear()} Netflix Clone. Built with React + TypeScript</p>
           <p className="footer-disclaimer">
             This is a clone project for educational purposes. All movie data from <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDB</a>.
           </p>

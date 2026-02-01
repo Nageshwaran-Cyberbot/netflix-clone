@@ -68,7 +68,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
 
   const addToWishlist = async (movie: Movie) => {
     if (isInWishlist(movie.id)) {
-      toast('Already in your list!', { icon: '📝' });
+      toast('Already in your list!');
       return;
     }
 

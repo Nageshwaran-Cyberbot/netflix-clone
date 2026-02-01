@@ -58,7 +58,7 @@ const Register: React.FC = () => {
     const success = await register(formData.email, formData.password, formData.name);
     if (success) {
       // Navigation will happen via useEffect when isAuthenticated becomes true
-      console.log('✅ Registration successful, redirecting...');
+      console.log('Registration successful, redirecting...');
       // Also do immediate navigation as backup
       setTimeout(() => navigate('/', { replace: true }), 100);
     }

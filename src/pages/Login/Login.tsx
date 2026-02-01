@@ -42,7 +42,7 @@ const Login: React.FC = () => {
       const success = await login(formData.email, formData.password);
       if (success) {
         // Navigation will happen via useEffect when isAuthenticated becomes true
-        console.log('✅ Login successful, redirecting...');
+        console.log('Login successful, redirecting...');
         // Also do immediate navigation as backup
         setTimeout(() => navigate('/', { replace: true }), 100);
       } else {
