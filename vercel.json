@@ -23,9 +23,9 @@
     }
   ],
   "env": {
-    "VITE_TMDB_API_KEY": "8dcba2c5d42d8060925a212e54656155",
+    "VITE_TMDB_API_KEY": "@vite_tmdb_api_key",
     "VITE_TMDB_BASE_URL": "https://api.themoviedb.org/3",
     "VITE_TMDB_IMAGE_BASE_URL": "https://image.tmdb.org/t/p",
-    "VITE_BACKEND_URL": "https://netflix-clone-hh1d.vercel.app/api"
+    "VITE_BACKEND_URL": "@vite_backend_url"
   }
 }
