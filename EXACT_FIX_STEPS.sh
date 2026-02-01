@@ -94,10 +94,10 @@ STEP 5: Get Connection String
 7. Add /netflix-clone before the ?
 
 Final format should be:
-mongodb+srv://netflixadmin:YourPasswordHere@cluster0.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
+mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
 
-EXAMPLE:
-mongodb+srv://netflixadmin:NetflixClone2026!@netflix-clone.abc123.mongodb.net/netflix-clone?retryWrites=true&w=majority
+EXAMPLE (with placeholders):
+mongodb+srv://YOUR_USER:YOUR_PASS@netflix-clone.abc123.mongodb.net/netflix-clone?retryWrites=true&w=majority
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STEP 6: Update Render Environment Variable
@@ -115,7 +115,7 @@ IN YOUR RENDER DASHBOARD (the screen you showed me):
    postgresql://netflix_clone_db_skt3_user:...
 
 5. PASTE your MongoDB Atlas connection string:
-   mongodb+srv://netflixadmin:YourPassword@cluster0.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
+   mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
 
 6. Click: "Save Changes"
 

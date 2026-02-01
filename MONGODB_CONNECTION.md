@@ -1,17 +1,24 @@
-## 🔗 YOUR MONGODB CONNECTION STRING
+## 🔗 MONGODB CONNECTION STRING FORMAT
 
-### User Details
-```
-Username: bugbountyp1_db_user
-Password: NetflixClone2026
-Cluster: cluster0.t4bdata.mongodb.net
-```
-
-### Final Connection String (Copy This!)
+### Connection String Template
 
 ```
-mongodb+srv://bugbountyp1_db_user:NetflixClone2026@cluster0.t4bdata.mongodb.net/netflix-clone?retryWrites=true&w=majority
+mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER_ID>.mongodb.net/netflix-clone?retryWrites=true&w=majority
 ```
+
+**Replace placeholders**:
+- `<USERNAME>` → Your MongoDB Atlas username
+- `<PASSWORD>` → Your MongoDB Atlas password  
+- `<CLUSTER_ID>` → Your cluster ID (e.g., cluster0.xxxxx)
+
+### How to Get Your Connection String
+
+1. Go to [MongoDB Atlas](https://cloud.mongodb.com)
+2. Click **"Connect"** on your cluster
+3. Choose **"Connect your application"**
+4. Copy the connection string
+5. Replace `<password>` with your actual password
+6. Add `/netflix-clone` before the `?` to specify the database
 
 ---
 

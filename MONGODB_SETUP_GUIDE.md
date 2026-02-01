@@ -1,9 +1,9 @@
 # 🗄️ MongoDB Atlas Setup - Complete Guide
 
 ## Current Status
-- **Cluster**: Cluster0 (exists in MongoDB Atlas)
-- **User**: bugbountyp1_db_user
-- **Password**: NetflixClone2026
+- **Cluster**: Cluster0 (MongoDB Atlas)
+- **User**: Your database username
+- **Password**: Your database password
 - **Database**: netflix-clone
 - **Connection**: ❌ Not configured in Render
 
@@ -42,24 +42,24 @@ Look for the cluster status:
 
 **Example format**:
 ```
-mongodb+srv://bugbountyp1_db_user:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
+mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
 ```
 
 ### Step 5: Format Connection String
 Replace `<password>` with your actual password and add database name:
 
 ```
-mongodb+srv://bugbountyp1_db_user:NetflixClone2026@cluster0.XXXXX.mongodb.net/netflix-clone?retryWrites=true&w=majority
+mongodb+srv://<username>:<password>@cluster0.XXXXX.mongodb.net/netflix-clone?retryWrites=true&w=majority
 ```
 
 **Replace**:
-- `<password>` → `NetflixClone2026`
+- `<password>` → Your actual MongoDB password
 - `XXXXX` → Your actual cluster ID (from the string you copied)
 - Add `/netflix-clone` before the `?` to specify database name
 
-**✅ Correct Example**:
+**✅ Correct Format**:
 ```
-mongodb+srv://bugbountyp1_db_user:NetflixClone2026@cluster0.t4bdata.mongodb.net/netflix-clone?retryWrites=true&w=majority
+mongodb+srv://YOUR_USER:YOUR_PASS@cluster0.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
 ```
 
 ### Step 6: Update Render Environment Variable
@@ -114,9 +114,8 @@ curl https://your-backend-url.onrender.com/health
 ### Issue 2: "Authentication failed"
 **Cause**: Wrong username or password
 **Solution**: 
-- Username: `bugbountyp1_db_user`
-- Password: `NetflixClone2026`
-- Verify these in MongoDB Atlas under "Database Access"
+- Verify credentials in MongoDB Atlas under "Database Access"
+- Check username and password match exactly
 
 ### Issue 3: "No DNS entries"
 **Cause**: Cluster still being created OR typo in cluster ID
@@ -135,7 +134,7 @@ curl https://your-backend-url.onrender.com/health
 Before proceeding, ensure:
 - [ ] MongoDB Atlas account created
 - [ ] Cluster0 is **active** (green indicator)
-- [ ] Database user exists (bugbountyp1_db_user)
+- [ ] Database user exists with proper credentials
 - [ ] Network Access configured (0.0.0.0/0)
 - [ ] Connection string copied from Atlas
 - [ ] Password replaced in connection string
