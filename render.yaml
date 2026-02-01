@@ -4,8 +4,9 @@ services:
     env: node
     plan: free
     region: oregon
-    buildCommand: cd server && npm install --include=dev && npm run build
+    buildCommand: cd server && npm install && npm run build
     startCommand: cd server && npm start
+    healthCheckPath: /health
     
     envVars:
       - key: PORT
@@ -21,14 +22,14 @@ services:
       - key: TMDB_BASE_URL
         value: https://api.themoviedb.org/3
       - key: MONGODB_URI
-        fromDatabase:
-          name: netflix-clone-db
-          property: connectionString
+        sync: false
       - key: CORS_ORIGIN
         value: https://netflix-clone-hh1d.vercel.app
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
 
-databases:
-  - name: netflix-clone-db
-    plan: free
-    region: oregon
-    ipAllowList: []
+# Note: Use external MongoDB Atlas instead of Render's database
+# Get your connection string from: https://cloud.mongodb.com
+# Format: mongodb+srv://username:password@cluster.mongodb.net/netflix-clone

@@ -1,5 +1,5 @@
 // Update the base URL for backend API
-const BACKEND_URL = 'http://localhost:5001/api';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001/api';
 
 export interface WatchlistItem {
   itemId: number;

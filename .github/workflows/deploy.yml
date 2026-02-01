@@ -24,17 +24,18 @@ jobs:
     name: Deploy Backend to Render
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Trigger Render Deployment
-        run: |
-          if [ -n "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
-            curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
-            echo "Deployment triggered on Render"
-          else
-            echo "RENDER_DEPLOY_HOOK not configured"
-          fi
-
+    - uses: actions/checkout@v4
+    
+    - name: Trigger Render Deployment
+      env:
+        RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+      run: |
+        if [ -n "$RENDER_DEPLOY_HOOK" ]; then
+          curl -X POST "$RENDER_DEPLOY_HOOK"
+          echo "Deployment triggered on Render"
+        else
+          echo "RENDER_DEPLOY_HOOK not configured"
+        fi
   notify-completion:
     name: Deployment Complete
     runs-on: ubuntu-latest
