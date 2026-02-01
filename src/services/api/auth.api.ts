@@ -47,7 +47,9 @@ interface UserResponse {
 // Register new user
 export const registerUser = async (data: RegisterData): Promise<AuthResponse> => {
   try {
-    console.log('[Auth API] Registering user:', data.email);
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Registering user:', data.email);
+    }
     const response = await fetch(`${BACKEND_URL}/auth/register`, {
       method: 'POST',
       headers: {
@@ -57,7 +59,9 @@ export const registerUser = async (data: RegisterData): Promise<AuthResponse> =>
     });
     
     const responseData = await response.json();
-    console.log('[Auth API] Register response:', responseData);
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Register response:', { success: responseData.success, message: responseData.message });
+    }
     
     if (!response.ok) {
       return {
@@ -79,7 +83,9 @@ export const registerUser = async (data: RegisterData): Promise<AuthResponse> =>
 // Login user
 export const loginUser = async (data: LoginData): Promise<AuthResponse> => {
   try {
-    console.log('[Auth API] Logging in user:', data.email);
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Logging in user:', data.email);
+    }
     const response = await fetch(`${BACKEND_URL}/auth/login`, {
       method: 'POST',
       headers: {
@@ -89,7 +95,9 @@ export const loginUser = async (data: LoginData): Promise<AuthResponse> => {
     });
     
     const responseData = await response.json();
-    console.log('[Auth API] Login response:', responseData);
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Login response:', { success: responseData.success, message: responseData.message });
+    }
     
     if (!response.ok) {
       return {
@@ -111,7 +119,9 @@ export const loginUser = async (data: LoginData): Promise<AuthResponse> => {
 // Get current user
 export const getCurrentUser = async (token: string): Promise<UserResponse> => {
   try {
-    console.log('[Auth API] Getting current user with token');
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Getting current user with token');
+    }
     const response = await fetch(`${BACKEND_URL}/auth/me`, {
       method: 'GET',
       headers: {
@@ -121,12 +131,16 @@ export const getCurrentUser = async (token: string): Promise<UserResponse> => {
     });
     
     if (!response.ok) {
-      console.log('[Auth API] getCurrentUser failed with status:', response.status);
+      if (import.meta.env.DEV) {
+        console.log('[Auth API] getCurrentUser failed with status:', response.status);
+      }
       return { success: false };
     }
     
     const responseData = await response.json();
-    console.log('[Auth API] getCurrentUser response:', responseData);
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] getCurrentUser response:', { success: responseData.success });
+    }
     return responseData;
   } catch (error) {
     console.error('[Auth API] Get user error:', error);

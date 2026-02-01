@@ -33,17 +33,25 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       const storedToken = localStorage.getItem('netflix_token');
       if (storedToken) {
         try {
-          console.log('[AuthContext] Checking authentication with stored token');
+          if (import.meta.env.DEV) {
+            console.log('[AuthContext] Checking authentication with stored token');
+          }
           const response = await getCurrentUser(storedToken);
-          console.log('[AuthContext] getCurrentUser response:', response);
+          if (import.meta.env.DEV) {
+            console.log('[AuthContext] getCurrentUser response:', { success: response.success });
+          }
           
           if (response.success && response.data) {
             setUser(response.data);
             setToken(storedToken);
-            console.log('[AuthContext] Authentication successful, user set:', response.data);
+            if (import.meta.env.DEV) {
+              console.log('[AuthContext] Authentication successful, user set');
+            }
           } else {
             // Invalid token, clear storage
-            console.log('[AuthContext] Invalid token, clearing storage');
+            if (import.meta.env.DEV) {
+              console.log('[AuthContext] Invalid token, clearing storage');
+            }
             localStorage.removeItem('netflix_token');
           }
         } catch (error) {
@@ -60,9 +68,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
       setLoading(true);
-      console.log('[AuthContext] Attempting login for:', email);
+      if (import.meta.env.DEV) {
+        console.log('[AuthContext] Attempting login for:', email);
+      }
       const response = await loginUser({ email, password });
-      console.log('[AuthContext] Login response:', response);
+      if (import.meta.env.DEV) {
+        console.log('[AuthContext] Login response:', { success: response.success, message: response.message });
+      }
       
       // Handle response structure: { success, data: { token, user } }
       if (response.success) {
@@ -74,13 +86,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           setToken(token);
           localStorage.setItem('netflix_token', token);
           toast.success(`Welcome back, ${user.name}!`);
-          console.log('[AuthContext] Login successful');
+          if (import.meta.env.DEV) {
+            console.log('[AuthContext] Login successful');
+          }
           return true;
         }
       }
       
       const errorMessage = response.message || 'Login failed';
-      console.log('[AuthContext] Login failed:', errorMessage);
+      if (import.meta.env.DEV) {
+        console.log('[AuthContext] Login failed:', errorMessage);
+      }
       toast.error(errorMessage);
       return false;
     } catch (error: any) {
@@ -96,9 +112,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const register = async (email: string, password: string, name: string): Promise<boolean> => {
     try {
       setLoading(true);
-      console.log('[AuthContext] Attempting registration for:', email);
+      if (import.meta.env.DEV) {
+        console.log('[AuthContext] Attempting registration for:', email);
+      }
       const response = await registerUser({ email, password, name });
-      console.log('[AuthContext] Registration response:', response);
+      if (import.meta.env.DEV) {
+        console.log('[AuthContext] Registration response:', { success: response.success, message: response.message });
+      }
       
       // Handle response structure: { success, data: { token, user } }
       if (response.success) {
@@ -110,13 +130,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           setToken(token);
           localStorage.setItem('netflix_token', token);
           toast.success(`Welcome to Netflix, ${user.name}!`);
-          console.log('[AuthContext] Registration successful');
+          if (import.meta.env.DEV) {
+            console.log('[AuthContext] Registration successful');
+          }
           return true;
         }
       }
       
       const errorMessage = response.message || 'Registration failed';
-      console.log('[AuthContext] Registration failed:', errorMessage);
+      if (import.meta.env.DEV) {
+        console.log('[AuthContext] Registration failed:', errorMessage);
+      }
       toast.error(errorMessage);
       return false;
     } catch (error: any) {
