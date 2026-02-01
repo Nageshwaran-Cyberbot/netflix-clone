@@ -47,6 +47,9 @@ interface UserResponse {
 // Register new user
 export const registerUser = async (data: RegisterData): Promise<AuthResponse> => {
   try {
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Registering user:', data.email);
+    }
     const response = await fetch(`${BACKEND_URL}/auth/register`, {
       method: 'POST',
       headers: {
@@ -55,17 +58,21 @@ export const registerUser = async (data: RegisterData): Promise<AuthResponse> =>
       body: JSON.stringify(data),
     });
     
+    const responseData = await response.json();
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Register response:', { success: responseData.success, message: responseData.message });
+    }
+    
     if (!response.ok) {
-      const errorData = await response.json();
       return {
         success: false,
-        message: errorData.message || 'Registration failed',
+        message: responseData.message || 'Registration failed',
       };
     }
     
-    return response.json();
+    return responseData;
   } catch (error) {
-    console.error('Register API error:', error);
+    console.error('[Auth API] Register error:', error);
     return {
       success: false,
       message: 'Network error. Please check your connection.',
@@ -76,6 +83,9 @@ export const registerUser = async (data: RegisterData): Promise<AuthResponse> =>
 // Login user
 export const loginUser = async (data: LoginData): Promise<AuthResponse> => {
   try {
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Logging in user:', data.email);
+    }
     const response = await fetch(`${BACKEND_URL}/auth/login`, {
       method: 'POST',
       headers: {
@@ -84,17 +94,21 @@ export const loginUser = async (data: LoginData): Promise<AuthResponse> => {
       body: JSON.stringify(data),
     });
     
+    const responseData = await response.json();
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Login response:', { success: responseData.success, message: responseData.message });
+    }
+    
     if (!response.ok) {
-      const errorData = await response.json();
       return {
         success: false,
-        message: errorData.message || 'Login failed',
+        message: responseData.message || 'Login failed',
       };
     }
     
-    return response.json();
+    return responseData;
   } catch (error) {
-    console.error('Login API error:', error);
+    console.error('[Auth API] Login error:', error);
     return {
       success: false,
       message: 'Network error. Please check if the backend is running.',
@@ -105,6 +119,9 @@ export const loginUser = async (data: LoginData): Promise<AuthResponse> => {
 // Get current user
 export const getCurrentUser = async (token: string): Promise<UserResponse> => {
   try {
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] Getting current user with token');
+    }
     const response = await fetch(`${BACKEND_URL}/auth/me`, {
       method: 'GET',
       headers: {
@@ -114,12 +131,19 @@ export const getCurrentUser = async (token: string): Promise<UserResponse> => {
     });
     
     if (!response.ok) {
+      if (import.meta.env.DEV) {
+        console.log('[Auth API] getCurrentUser failed with status:', response.status);
+      }
       return { success: false };
     }
     
-    return response.json();
+    const responseData = await response.json();
+    if (import.meta.env.DEV) {
+      console.log('[Auth API] getCurrentUser response:', { success: responseData.success });
+    }
+    return responseData;
   } catch (error) {
-    console.error('Get user API error:', error);
+    console.error('[Auth API] Get user error:', error);
     return { success: false };
   }
 };
