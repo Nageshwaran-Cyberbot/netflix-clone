@@ -60,7 +60,7 @@ STEP 1: Setup MongoDB Atlas (5 minutes)
    - Add New Database User
    - Authentication: Password
    - Username: netflixadmin
-   - Password: Generate secure password OR use: NetflixClone2026!
+   - Password: Generate secure password (save it!)
    - Database User Privileges: Read and write to any database
    - Click "Add User"
 
@@ -85,7 +85,7 @@ STEP 1: Setup MongoDB Atlas (5 minutes)
    Add database name at the end: /netflix-clone
 
    Final format:
-   mongodb+srv://netflixadmin:NetflixClone2026!@netflix-clone.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
+   mongodb+srv://YOUR_USER:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -105,7 +105,7 @@ In Render Dashboard:
    - Paste your MongoDB Atlas connection string
    
    Should look like:
-   mongodb+srv://netflixadmin:NetflixClone2026!@netflix-clone.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
+   mongodb+srv://YOUR_USER:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/netflix-clone?retryWrites=true&w=majority
 
 5. Click "Save Changes"
 

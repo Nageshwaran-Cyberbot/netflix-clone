@@ -54,7 +54,7 @@ You'll see a "Security Quickstart" screen:
    
 2. Password: Click "Autogenerate Secure Password"
    → COPY THIS PASSWORD! You'll need it in a moment
-   → Or use: NetflixClone2026!
+   → Save it securely
    
 3. Click: "Create User"
 

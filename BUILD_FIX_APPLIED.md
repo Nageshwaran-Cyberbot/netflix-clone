@@ -52,7 +52,7 @@ Error: querySrv ENOTFOUND _mongodb._tcp.cluster0.t4bdata.mongodb.net
 3. Choose "Connect your application"
 4. Select "Node.js" driver
 5. Copy the connection string
-6. Replace `<password>` with: `NetflixClone2026`
+6. Replace `<password>` with your actual MongoDB password
 7. Replace `<dbname>` with: `netflix-clone`
 8. Update `MONGODB_URI` in Render dashboard
 
