@@ -152,13 +152,11 @@ export const getMe = async (req: Request, res: Response): Promise<void> => {
     res.status(200).json({
       success: true,
       data: {
-        user: {
-          id: user._id,
-          email: user.email,
-          name: user.name,
-          avatar: user.avatar,
-          createdAt: user.createdAt,
-        },
+        id: user._id,
+        email: user.email,
+        name: user.name,
+        avatar: user.avatar,
+        createdAt: user.createdAt,
       },
     });
   } catch (error: any) {
@@ -198,12 +196,10 @@ export const updateProfile = async (req: Request, res: Response): Promise<void> 
       success: true,
       message: 'Profile updated successfully',
       data: {
-        user: {
-          id: user._id,
-          email: user.email,
-          name: user.name,
-          avatar: user.avatar,
-        },
+        id: user._id,
+        email: user.email,
+        name: user.name,
+        avatar: user.avatar,
       },
     });
   } catch (error: any) {
